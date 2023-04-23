@@ -32,10 +32,12 @@ Application developed to study the creation of a complete project with the Next.
 - Redirect in SSR
 - SEO
 
-In addition, in this challenge, I took advantage of the application: ... that I had already developed on the trail to implement a cart that uses data from the Stripe API to search for existing items, and controls, through the application, the number of items that the person wants to buy.
+In this challenge, I took advantage of the application: https://github.com/tialaR/ignite2-reactjs-ignite-shop that I had already developed on the trail to implement a cart that uses data from the Stripe API to search for existing items, and controls, through the application, the number of items that the person wants to buy.
 In this challenge:
 - I used a list already created by the application, but adding the possibility of adding items to the cart on each product page.
 - I stored all items selected in the application, displaying their quantity and price in the cart.
+- I used the provider pattern to share the cart product list data throughout the application
+- I create a shopping cart hookcalled useCart to abstract the logic from the context of the cart provider.
 
 ### Video:
 ![](Ignite-shop-video.gif) 
