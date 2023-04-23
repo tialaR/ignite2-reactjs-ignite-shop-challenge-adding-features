@@ -34,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // session_id={CHECKOUT_SESSION_ID} é o parâmetro q/ é enviado p/ página de sucesso com o uso do stripe
   //Isso faz com que a url da página de sucesso receba um session_id como parametro
-  const successUrl = `${process.env.NEXT_URL}/ ?session_id={CHECKOUT_SESSION_ID}`;
+  const successUrl = `${process.env.NEXT_URL}/success?session_id={CHECKOUT_SESSION_ID}`;
 
   const cancelUrl = `${process.env.NEXT_URL}/`;
 

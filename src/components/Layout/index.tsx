@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 
 import Image from 'next/image'
 
@@ -11,6 +11,7 @@ import { Product, useCart } from '@/hooks/useCart';
 import { Container, ShoppingCartMenuContainer, ShoppingCartMenuList, ShoppingCartMenuFooter, ShoppingCartMenuEmptyContainer } from './styles';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import { emptyShoppingCartWhenTimeExpires } from '@/helpers/cartHelper';
 
 type LayoutProps = {
     children: ReactElement;
@@ -33,6 +34,10 @@ const Layout: React.FC<LayoutProps> = ({ children, hasShoppingCart = true }) => 
   const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false);
 
   const isCartEmpty = cartProducts?.length <= 0;
+
+  useEffect(() => {
+    emptyShoppingCartWhenTimeExpires()
+  }, []);
 
 
   async function handleBuyButton() {
